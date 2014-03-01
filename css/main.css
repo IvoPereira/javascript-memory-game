@@ -1,0 +1,81 @@
+body {
+	font-size: 1em;
+	line-height: 1.4;
+	background:#5d8eb9;
+	overflow:hidden;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	outline-style:none;/*IE*/
+}
+
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
+.overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	color:#FFF;
+	text-align:center;
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	background: rgba(0, 0, 0, 0.8);
+	/* For IE 5.5 - 7*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	/* For IE 8*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+	padding-top:50px;
+	font-size:24px;
+	z-index:2;
+}
+
+button {
+	padding:10px;
+}
+
+.main-width {
+	width:640px;
+	margin:0 auto;
+}
+
+#wrapper {
+	position:relative;
+	width:840px;
+	margin:40px auto 0;
+}
+
+#wrapper #timer {
+	text-align: right;
+	font-size: 16px;
+	margin-right: 20px;
+	font-weight: bold;
+}
+
+#share {
+	display:none;
+}
+
+.twitter-share-button, button {
+	display:block;
+	margin:20px auto;
+}
+
+#wrapper .row {
+	display:block;
+}
+
+#wrapper .column {
+	margin:0 5px;
+	float:left;
+}
+
+#wrapper .row img, #wrapper .row img:focus {
+	cursor:pointer;
+}
