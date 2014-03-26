@@ -7,3 +7,7 @@ JavaScript Memory Game totally created from scratch. Using JSONP to get cards.
 - [X] Optimize JavaScript by doing basecode optimizations
 - [X] Make code follow best practises based on JSLint
 - [ ] Turn the game into a responsive design
+
+### Play Here
+
+Do your best time here: http://www.ivopereira.net/experiments/games/memory/
