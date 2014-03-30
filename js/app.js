@@ -265,10 +265,7 @@
                 for (card = 0; card < cardsLength; card += 1) {
 
                     /** let's flip the card on click **/
-                    //cards[card].onclick = app.game.flipCard( cards[card] );
-
-                    cards[card].addEventListener("click", app.game.flipCard, false);
-
+                    app.helperFunctions.addEvent(cards[card], 'click', app.game.flipCard);
 
                     /** do not allow the user to drag the card **/
                     cards[card].ondragstart = app.helperFunctions.cancelCardDrag;
@@ -466,6 +463,25 @@
 
 
         helperFunctions: {
+
+            addEvent: function (obj, type, fn) {
+                if (obj.attachEvent) {
+                    obj['e' + type + fn] = fn;
+                    obj[type + fn] = function () {
+                        obj['e' + type + fn](window.event);
+                    }
+                    obj.attachEvent('on' + type, obj[type + fn]);
+                } else
+                    obj.addEventListener(type, fn, false);
+            },
+
+            removeEvent: function (obj, type, fn) {
+                if (obj.detachEvent) {
+                    obj.detachEvent('on' + type, obj[type + fn]);
+                    obj[type + fn] = null;
+                } else
+                    obj.removeEventListener(type, fn, false);
+            },
 
             isInt: function (value) {
                 return typeof value === 'number' && !isNaN(parseInt(value, 10)) && isFinite(value);
